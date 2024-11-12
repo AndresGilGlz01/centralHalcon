@@ -1,0 +1,40 @@
+﻿@model centralHalcon.Models.ViewModels.IndexViewModel
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
+    <title>Inicio</title>
+</head>
+
+<body>
+    <main class="index">
+        <header class="header">
+            <span class="header-text">Credencial Virtual</span>
+        </header>
+        <section class="panel">
+            <article class="credencial" style="max-width: 100%">
+                <span class="credencial-leyenda">Estudiante - @Model.Vigencia</span>
+                <div class="credencial-logos">
+                    <img src="/assets/img/tec-1.png" alt="TecNM" width="100">
+                    <img src="/assets/img/tec-2.png" alt="SEP" width="50">
+                </div>
+                <img style="max-width: 100%" src="https://intertec.tec-carbonifera.edu.mx/fotos/AL/@(Model.NumControl.Substring(0, 2))/@(Model.NumControl).jpg" alt="estudiante" class="credencial-foto">
+                <span class="credencial-nocontrol">@Model.NumControl</span>
+                <span class="credencial-nombre">@Model.NombreAlumno</span>
+                <span class="credencial-carrera">@Model.Carrera</span>
+                <div class="credencial-info info-curp">
+                    CURP - <span class="credencial-dato">@Model.Curp</span>
+                </div>
+                <div class="credencial-info info-periodo">
+                    Periodo - <span class="credencial-dato">@Model.Periodo</span>
+                </div>
+            </article>
+        </section>
+    </main>
+</body>
+
+</html>
